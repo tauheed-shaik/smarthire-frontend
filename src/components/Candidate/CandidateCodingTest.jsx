@@ -143,7 +143,7 @@ export default function CandidateCodingTest() {
       setError("");
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/interviews/candidate/coding/${candidateId}`
+          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/interviews/candidate/coding/${candidateId}`
         );
         const data = res.data;
         console.log("FULL CODING SESSION RESPONSE:", data);
@@ -319,7 +319,7 @@ export default function CandidateCodingTest() {
     setSubmitting(true);
     try {
       const res = await axios.post(
-        `http://localhost:8080/api/interviews/coding/submit/${sessionId}`,
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/interviews/coding/submit/${sessionId}`,
         {
           code,
           language: selectedLang.name.toLowerCase(),

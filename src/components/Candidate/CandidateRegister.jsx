@@ -75,7 +75,7 @@ function CandidateRegister() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/candidate/register",
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/register`,
         payload,
         {
           headers: {

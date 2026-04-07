@@ -46,7 +46,7 @@ function ManageProfile() {
 
       try {
         const res = await axios.get(
-          `http://localhost:8080/api/candidate/profile/${candidateId}`
+          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/profile/${candidateId}`
         );
 
         const candidate = res.data["Candidate profile"];
@@ -123,7 +123,7 @@ function ManageProfile() {
 
     try {
       await axios.put(
-        `http://localhost:8080/api/candidate/update-profile?candidateId=${candidateId}`,
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/update-profile?candidateId=${candidateId}`,
         payload
       );
       setMessage("Profile updated successfully!");
@@ -152,7 +152,7 @@ function ManageProfile() {
     try {
       const fileName = profile.resumePath.split("/").pop(); // Extract filename
       const response = await axios.get(
-        `http://localhost:8080/${profile.resumePath}`,
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/${profile.resumePath}`,
         { responseType: "blob" }
       );
 

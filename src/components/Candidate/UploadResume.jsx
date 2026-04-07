@@ -86,7 +86,7 @@ function UploadResume() {
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/api/resume/upload",
+        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/resume/upload`,
         formData,
         {
           headers: {

@@ -5,7 +5,7 @@ import { PDFDownloadLink } from "@react-pdf/renderer";
 import ResumePDF from "./ResumePDF";
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/resumes";
+const API_URL = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/resumes`;
 
 export default function ViewResume() {
   const [resumes, setResumes] = useState([]);
