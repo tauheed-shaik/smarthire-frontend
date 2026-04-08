@@ -26,7 +26,7 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Routes>
+        <Routes >
           <Route path="/" element={<Homepage />} />
           <Route path="/candidate-login" element={<CandidateLogin />} />
           <Route path="/recruiter-login" element={<RecruiterLogin />} />
