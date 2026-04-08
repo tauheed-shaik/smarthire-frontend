@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./components/Homepage";
 import RecruiterLogin from "./components/Recruiter/RecruiterLogin";
 import CandidateRegister from "./components/Candidate/CandidateRegister";
-import CandidateLogin from "./components/Candidate/candidateLogin";
+import CandidateLogin from "./components/Candidate/CandidateLogin";
 import CandidateDashboard from "./components/Candidate/CandidateDashboard";
 import UploadResume from "./components/Candidate/UploadResume";
 import ManageProfile from "./components/Candidate/ManageProfile";
