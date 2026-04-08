@@ -20,7 +20,7 @@ import RecruiterNavbar from "./RecruiterNavbar";
 // ────────────────────────────────────────────────
 // IMPORTANT: Base URL without /recruiter
 // ────────────────────────────────────────────────
-const API_BASE = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api`;
+const API_BASE = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api`;
 
 export default function RecruiterQandA() {
   const [activeTab, setActiveTab] = useState("mcq"); // "mcq" or "coding"

@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import RecruiterNavbar from "./RecruiterNavbar";
 
-const CANDIDATE_API = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/get-all-candidates`;
+const CANDIDATE_API = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/get-all-candidates`;
 
 export default function RecruiterResumes() {
   const [candidates, setCandidates] = useState([]);
@@ -79,7 +79,7 @@ export default function RecruiterResumes() {
 
   const downloadResume = (path) => {
     if (path) {
-      const fullUrl = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/${path}`;
+      const fullUrl = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/${path}`;
       window.open(fullUrl, "_blank");
     } else {
       alert("Resume not uploaded");

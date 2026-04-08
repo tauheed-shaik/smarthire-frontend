@@ -68,7 +68,7 @@ function CandidateLogin() {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/login`,
+        `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/login`,
         formData,
         {
           headers: {
@@ -106,7 +106,7 @@ function CandidateLogin() {
 
     try {
       await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/forgot-password`,
+        `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/forgot-password`,
         null,
         {
           params: {

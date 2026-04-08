@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import RecruiterNavbar from "./RecruiterNavbar";
 
-const API_BASE = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/recruiter`;
+const API_BASE = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/recruiter`;
 
 export default function PostJob() {
   const navigate = useNavigate();

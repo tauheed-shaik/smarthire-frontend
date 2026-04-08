@@ -40,7 +40,7 @@ function Profile() {
 
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/profile/${candidateId}`
+          `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/profile/${candidateId}`
         );
 
         const candidate = res.data["Candidate profile"];
@@ -122,7 +122,7 @@ function Profile() {
 
     try {
       await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/update/${candidateId}`,
+        `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/update/${candidateId}`,
         payload
       );
       setMessage("Profile updated successfully!");
@@ -131,7 +131,7 @@ function Profile() {
 
       // Refresh profile
       const res = await axios.get(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/candidate/profile/${candidateId}`
+        `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/candidate/profile/${candidateId}`
       );
       const candidate = res.data["Candidate profile"];
       const skillsArray = JSON.parse(candidate.skills.replace(/\\"/g, '"'));
@@ -413,7 +413,7 @@ function Profile() {
                 <div>
                   <p className="text-sm text-gray-400 mb-1">Resume</p>
                   <a
-                    href={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/${profile.resumePath}`}
+                    href={`${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/${profile.resumePath}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center px-4 py-2 bg-green-900 text-green-300 rounded-lg hover:bg-green-800 transition text-sm font-medium"

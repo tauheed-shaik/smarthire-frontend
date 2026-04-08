@@ -33,7 +33,7 @@ function CheckStatus() {
       try {
         // Step 1: Get applications
         const appRes = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/applications/my-applications/${candidateId}`
+          `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/applications/my-applications/${candidateId}`
         );
 
         const apps = appRes.data.applications || [];
@@ -46,7 +46,7 @@ function CheckStatus() {
 
         // Step 2: Fetch job details
         const jobPromises = apps.map((app) =>
-          axios.get(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/jobs/${app.jobId}`)
+          axios.get(`${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/jobs/${app.jobId}`)
         );
 
         const jobResponses = await Promise.all(jobPromises);

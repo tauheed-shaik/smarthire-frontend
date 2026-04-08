@@ -28,7 +28,7 @@ function RecruiterLogin() {
   const navigate = useNavigate();
 
   // Backend API Base URL
-  const API_BASE = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/recruiter`;
+  const API_BASE = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/recruiter`;
 
   // Handle input change
   const handleChange = (e) => {

@@ -9,7 +9,7 @@ import {
 import RecruiterNavbar from "./RecruiterNavbar";
 import * as XLSX from "https://cdn.sheetjs.com/xlsx-0.20.2/package/xlsx.mjs"; // SheetJS CDN
 
-const API_BASE = `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api`;
+const API_BASE = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api`;
 
 export default function RecruiterSelectionStatus() {
   const [candidates, setCandidates] = useState([]);
@@ -265,7 +265,7 @@ export default function RecruiterSelectionStatus() {
                   {/* Resume */}
                   {c.resumePath && (
                     <a
-                      href={`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/${c.resumePath}`}
+                      href={`${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/${c.resumePath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full text-center py-3 mb-5 bg-indigo-600/20 border border-indigo-500 rounded-xl font-bold text-indigo-300 hover:bg-indigo-600/30 transition"

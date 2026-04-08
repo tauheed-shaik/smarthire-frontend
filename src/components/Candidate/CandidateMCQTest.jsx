@@ -84,7 +84,7 @@ export default function CandidateMCQTest() {
     const fetchTest = async () => {
       try {
         const res = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/interviews/candidate/mcq/${candidateId}`
+          `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/interviews/candidate/mcq/${candidateId}`
         );
         if (res.data.hasMCQ && res.data.jobId == jobId) {
           setData(res.data);
@@ -125,7 +125,7 @@ export default function CandidateMCQTest() {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}/api/interviews/${data.sessionId}/submit-mcq`,
+        `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api/interviews/${data.sessionId}/submit-mcq`,
         {
           answers: Object.entries(answers).map(([qid, ans]) => ({
             questionId: qid,
