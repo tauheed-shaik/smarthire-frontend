@@ -1,0 +1,26 @@
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/candidate-register",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/candidate-login", 
+      "dest": "/index.html"
+    },
+    {
+      "src": "/recruiter-login",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
