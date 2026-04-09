@@ -18,7 +18,6 @@ import {
 } from "lucide-react";
 import axios from "axios";
 import API_BASE_URL from "../../api";
-import API_BASE_URL from "../../api";
 import { useNavigate } from "react-router-dom";
 import CandidateNavbar from "./CandidateNavbar";
 
