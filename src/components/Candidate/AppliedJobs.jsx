@@ -17,6 +17,8 @@ import {
   X,
 } from "lucide-react";
 import axios from "axios";
+import API_BASE_URL from "../../api";
+import API_BASE_URL from "../../api";
 import { useNavigate } from "react-router-dom";
 import CandidateNavbar from "./CandidateNavbar";
 
@@ -35,7 +37,7 @@ function AppliedJobs() {
   const candidateId = localStorage.getItem("candidateId");
   const navigate = useNavigate();
 
-  const API_BASE = `${import.meta.env.VITE_API_BASE_URL || `${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080'}`}/api`;
+  const API_BASE = `${API_BASE_URL}/api`;
 
   // FETCH AVAILABLE JOBS
   const fetchAvailableJobs = async () => {

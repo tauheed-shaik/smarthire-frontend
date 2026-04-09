@@ -1,4 +1,14 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",
@@ -7,16 +17,12 @@
   ],
   "routes": [
     {
-      "src": "/candidate-register",
-      "dest": "/index.html"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
-      "src": "/candidate-login", 
-      "dest": "/index.html"
-    },
-    {
-      "src": "/recruiter-login",
-      "dest": "/index.html"
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2)$",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
